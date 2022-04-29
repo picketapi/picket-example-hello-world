@@ -1,7 +1,7 @@
 # Picket Hello World Example
 For this example we’ll be using next.js. While few of the next.js features are needed in this example tutorial, it will create a convenient launching off point for you to build on from this base. It also makes deployment easy through vercel.
 
-## 1. *Create your next.js app.* 
+## 1. Create your next.js app.
 In your terminal `cd` into the directory where you’d like your project folder to reside and enter the following into the terminal:
 `npx create-next-app@latest —typescript`
 

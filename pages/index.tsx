@@ -1,39 +1,66 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from "next";
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 
-import Picket from "@picketapi/picket-js";
-const apiKey = "pk-your-key-goes-here"
-const picket = new Picket(apiKey)
+import { usePicket } from "@picketapi/picket-react";
+
+const Header = () => (
+  <Head>
+    <title>Picket Hello World</title>
+    <meta name="description" content="Saying hello to a web3 world" />
+    <link rel="icon" href="/favicon.ico" />
+  </Head>
+);
 
 const Home: NextPage = () => {
+  const { isAuthenticating, isAuthenticated, authState, logout, login } =
+    usePicket();
 
-  const onLogin = async () => {
-    try {
-      const loginObject = await picket.login();
-      //Do whatever you'd like to do after a successful login
-      alert(loginObject.user.walletAddress + " successfully logged in. \n\nThe following access token can be used to secure future requests:\n\n" + loginObject.accessToken)
-    } catch (err) {
-      console.error(err);
-    }
-  };
-  
+  // user is logging in
+  if (isAuthenticating)
+    return (
+      <div className={styles.container}>
+        <Header />
+        <main className={styles.main}>
+          <h1 className={styles.title}>Connecting...</h1>
+        </main>
+      </div>
+    );
+
+  // user is not logged in
+  if (!isAuthenticated) {
+    return (
+      <div className={styles.container}>
+        <Header />
+        <main className={styles.main}>
+          <h1 className={styles.title}>Connect your wallet to login</h1>
+          <button
+            className={styles.connectWalletButton}
+            onClick={() => login()}
+          >
+            Connect Wallet
+          </button>
+        </main>
+      </div>
+    );
+  }
+
+  // user is logged in 🎉
+  const { user, accessToken } = authState;
+  const { walletAddress } = user;
+
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Picket Hello World</title>
-        <meta name="description" content="Saying hello to a web3 world" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      <Header />
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Connect your wallet to login
+          You are logged in as {walletAddress} 🎉
         </h1>
-        <button className={styles.connectWalletButton} onClick={onLogin}>Connect Wallet</button>
+        <code className={styles.accessToken}>{accessToken}</code>
+        <button onClick={() => logout()}>Logout</button>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

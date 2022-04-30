@@ -47,14 +47,14 @@ const Home: NextPage = () => {
 
   // user is logged in 🎉
   const { user, accessToken } = authState;
-  const { walletAddress } = user;
+  const { displayAddress } = user;
 
   return (
     <div className={styles.container}>
       <Header />
       <main className={styles.main}>
         <h1 className={styles.title}>
-          You are logged in as {walletAddress} 🎉
+          You are logged in as {displayAddress} 🎉
         </h1>
         <code className={styles.accessToken}>{accessToken}</code>
         <button onClick={() => logout()}>Logout</button>

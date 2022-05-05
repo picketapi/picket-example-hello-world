@@ -1,5 +1,5 @@
 # Picket Hello World Example
-For this example we’ll be using next.js. While few of the next.js features are needed in this example tutorial, it will create a convenient launching off point for you to build on from this base. It also makes deployment easy through vercel.
+For this example we’ll be using [Next.js](https://nextjs.org/). While few of the [Next.js](https://nextjs.org/) features are needed in this example tutorial, it will create a convenient launching off point for you to build on from this base. It also makes deployment easy through [Vercel](https://vercel.com/).
 
 ## 1. Create your next.js app.
 In your terminal `cd` into the directory where you’d like your project folder to reside and enter the following into the terminal:
@@ -8,16 +8,16 @@ In your terminal `cd` into the directory where you’d like your project folder 
 Confirm your app is running on localhost by running
  `npm run dev`
 
-Now, when you navigate to `localhost:3000` in your browser you should see the following:
+Now, when you navigate to http://localhost:3000 in your browser you should see the following:
 
 ## 2. Install the Picket React SDK 
 
 ```shell
-npm install --save @picketapi/picket-react
+npm install --save "@picketapi/picket-react"
 ```
 
 ## 3. Setup the Picket Provider 
-Replace the contents of \_app.tsx with the following: 
+Replace the contents of `pages/_app.tsx` with the following: 
 
 ```tsx
 import "../styles/globals.css";
@@ -39,7 +39,7 @@ export default MyApp;
 ```
 
 ## 4. Build your home page
-Replace the contents of index.tsx with the following:
+Replace the contents of `pages/index.tsx` with the following:
 
 ```tsx
 import type { NextPage } from "next";
@@ -150,15 +150,15 @@ and replace the contents of Home.module.css with the following:
 }
 ```
 
-When you navigate to localhost:3000 in your browser you should see the following:
+When you navigate to http://localhost:3000 in your browser you should see the following:
 
 ![image](public/picket-example1-app-running-frontend-only.png)
 
 ## 5. Now let's make it real!
-Now on to the juicy stuff. Let’s make the connect wallet button functional. Navigate to your [Picket account dashboard](https://picketapi.com/dashboard) and copy your publishable key from a project. Now paste it into the \_app.tsx
+Now on to the juicy stuff. Let’s make the connect wallet button functional. Navigate to your [Picket account dashboard](https://picketapi.com/dashboard) and copy your publishable key from a project. Now paste it into the `pages/_app.tsx`
 
 ```tsx
-// in _app.tsx
+// in pages/_app.tsx
 // Replace with your copied publishable key
 const apiKey = "YOUR_PUBLISHABLE_KEY_GOES_HERE";
 ```
@@ -171,7 +171,7 @@ Go back to your [Picket account dashboard](https://picketapi.com/dashboard) and 
 After adding the redirect URI for our app, click the `Save` button to save your changes to the project. Nice! Now we are ready to go.
 
 ## 7. Try it out!
-Now, when you run `npm run dev` from the command line and navigate to `http://localhost:3000` in your browser you should have a working app that lets you tap on the “Connect Wallet” button to initiate a signing request and verify your wallet.
+Now, when you run `npm run dev` from the command line and navigate to http://localhost:3000 in your browser you should have a working app that lets you tap on the “Connect Wallet” button to initiate a signing request and verify your wallet.
 
 Assuming you’re in a browser with Metamask installed, when you click on “Connect Wallet” you should now see the following: 
 

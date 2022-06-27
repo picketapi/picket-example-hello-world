@@ -164,18 +164,8 @@ You'll need to add your api key to make this functional. Navigate to your [Picke
 // Replace with your copied publishable key
 const apiKey = "YOUR_PUBLISHABLE_KEY_GOES_HERE";
 ```
-
-## 6. Whitelist our app's redirect URI
-
-Go back to your [Picket account dashboard](https://picketapi.com/dashboard) and click `Edit` on your project. Add the following redirect URI
-- http://localhost:3000/ (trailing slash matters!)
-
-After adding the redirect URI for our app, click the `Save` button to save your changes to the project. Nice! Now we are ready to go.
-
-Note that if you host this project elsewhere (not on localhost) you will have to add a redirect url that matches the url of wherever your code is hosted.
-
-## 7. Try it out!
-Now, when you run `npm run dev` from the command line and navigate to http://localhost:3000 in your browser you should have a working app that lets you tap on the “Connect Wallet” button to initiate a signing request and verify your wallet.
+## 6. Try it out!
+Now, when you run `npm run dev` from the command line and navigate to `http://localhost:3000` in your browser you should have a working app that lets you tap on the “Connect Wallet” button to initiate a signing request and verify your wallet.
 
 Assuming you’re in a browser with Metamask installed, when you click on “Connect Wallet” you should now see the following: 
 

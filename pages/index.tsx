@@ -28,7 +28,7 @@ const Home: NextPage = () => {
     );
 
   // user is not logged in
-  if (!isAuthenticated) {
+  if (!isAuthenticated || !authState) {
     return (
       <div className={styles.container}>
         <Header />

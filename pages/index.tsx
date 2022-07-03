@@ -13,7 +13,7 @@ const Header = () => (
 );
 
 const Home: NextPage = () => {
-  const { isAuthenticating, isAuthenticated, authState, logout, login } =
+  const { isAuthenticating, isAuthenticated, authState, logout, login, error } =
     usePicket();
 
   // user is logging in
@@ -33,13 +33,18 @@ const Home: NextPage = () => {
       <div className={styles.container}>
         <Header />
         <main className={styles.main}>
-          <h1 className={styles.title}>Connect your wallet to login</h1>
+          <h1 className={styles.title}>Connect Your Wallet to Sign-In</h1>
           <button
             className={styles.connectWalletButton}
             onClick={() => login()}
           >
-            Connect Wallet
+            Sign-In with Your Wallet
           </button>
+          {error && (
+            <p className={styles.error}>
+              {"msg" in error ? error.msg : error.toString()}
+            </p>
+          )}
         </main>
       </div>
     );

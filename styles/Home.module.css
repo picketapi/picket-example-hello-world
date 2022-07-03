@@ -33,3 +33,8 @@
   overflow-wrap: break-word;
   margin: 12px 0;
 }
+
+.error {
+  margin: 12px 0;
+  color: #b9261c;
+}

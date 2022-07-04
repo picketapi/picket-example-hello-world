@@ -36,8 +36,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp;
 ```
 
+The `PicketProvider` makes Picket and the user's authentication state available throughout your app via the `usePicket` hook.
+
 ## 4. Add Your API Key
-You'll need to add your pubblishable API key to make this functional. Navigate to your [Picket account dashboard](https://picketapi.com/dashboard) and copy your publishable key from a project. Now paste it into the `pages/_app.tsx`
+You'll need to add your publishable API key to make this functional. Navigate to your [Picket account dashboard](https://picketapi.com/dashboard) and copy your publishable key from a project. Now paste it into the `pages/_app.tsx`
 
 ```tsx
 // in pages/_app.tsx
@@ -48,7 +50,7 @@ const apiKey = "YOUR_PUBLISHABLE_KEY_GOES_HERE";
 ## 5. Build your home page
 Copy and paste the contents of [pages/index.tsx](https://github.com/picketapi/picket-example-hello-world/blob/main/pages/index.tsx) into your local `pages/index.tsx`.
 
-The magic method here to initiate logging in a user is `picket.login()`, which is triggered when a user click the  `Sign-In  with Your Wallet` button.
+The magic method here to initiate logging in a user is `picket.login()`, which is triggered when a user click the `Sign-In with Your Wallet` button.
 
 Next up, replace the contents of your local `styles/Home.module.css` with the [styles/Home.module.css](https://github.com/picketapi/picket-example-hello-world/blob/main/styles/Home.module.css).
 
@@ -59,7 +61,7 @@ When you navigate to http://localhost:3000 in your browser you should see the fo
 ## 6. Try it out!
 Now, when you run `npm run dev` from the command line and navigate to http://localhost:3000 in your browser you should have a working app. You can tap on the `Sign-In with Your Wallet` button to initiate a signing request and verify your wallet.
 
-Assuming you’re in a browser with Metamask installed, when you click on `Sign-In with Your Wallet`  you should now see the following: 
+Assuming you’re in a browser with Metamask installed, when you click on `Sign-In with Your Wallet` you should now see the following: 
 
 ![image](public/picket-example1-mm-signing-request.png)
 

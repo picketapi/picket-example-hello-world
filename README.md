@@ -8,8 +8,6 @@ In your terminal `cd` into the directory where you’d like your project folder 
 Confirm your app is running on localhost by running
  `npm run dev`
 
-Now, when you navigate to http://localhost:3000 in your browser you should see the following:
-
 ## 2. Install the Picket React SDK 
 
 ```shell

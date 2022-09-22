@@ -33,12 +33,12 @@ const Home: NextPage = () => {
       <div className={styles.container}>
         <Header />
         <main className={styles.main}>
-          <h1 className={styles.title}>Connect Your Wallet to Sign-In</h1>
+          <h1 className={styles.title}>Connect Your Wallet to Log In</h1>
           <button
             className={styles.connectWalletButton}
             onClick={() => login()}
           >
-            Sign-In with Your Wallet
+            Log In with Your Wallet
           </button>
           {error && (
             <p className={styles.error}>
